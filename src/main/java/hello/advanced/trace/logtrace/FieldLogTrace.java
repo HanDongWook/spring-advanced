@@ -18,8 +18,7 @@ public class FieldLogTrace implements LogTrace {
         syncTraceId();
         TraceId traceId = traceIdHolder;
         Long startTimeMs = System.currentTimeMillis();
-        log.info("[{}] {}{}", traceId.getId(), addSpace(START_PREFIX,
-                traceId.getLevel()), message);
+        log.info("[{}] {}{}", traceId.getId(), addSpace(START_PREFIX, traceId.getLevel()), message);
         return new TraceStatus(traceId, startTimeMs, message);
     }
 
@@ -68,7 +67,7 @@ public class FieldLogTrace implements LogTrace {
     private String addSpace(String prefix, int level) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < level; i++) {
-            sb.append((i == level - 1) ? "|" + prefix : "| } ");
+            sb.append((i == level - 1) ? "|" + prefix : "| ");
         }
         return sb.toString();
     }

@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 @Slf4j
 public class ThreadLocalServiceTest {
+
     private ThreadLocalService service = new ThreadLocalService();
 
     @Test
